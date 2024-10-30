@@ -1,0 +1,429 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+.lagersystem-parcelpickup-container {
+    background-color:#f8f8f8;
+    padding:20px;
+    margin-bottom: 40px;
+}
+
+.lagersystem-parcelpickup-header {
+    font-weight: bold;
+}
+
+.lagersystem-parcelpickup-changeBtn-container {
+    padding-top:10px;
+}
+
+
+
+#lagersystem-parcelpickup-div,
+.lagersystem-parcelpickup-div {
+    margin-top: 20px;
+    overflow: hidden;
+}
+.lagersystem-parcelpickup-wrap {
+    position: relative;
+}
+@media (max-width: 768px) {
+    .lagersystem-parcelpickup-wrap {
+        margin-top: 1em;
+    }
+}
+.lagersystem-parcelpickup-map,
+.lagersystem-parcelpickup-results {
+    height: 380px;
+}
+.lagersystem-parcelpickup-map {
+    margin-right: 330px;
+}
+.lagersystem-parcelpickup-results {
+    width: 330px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.lagersystem-parcelpickup-results {
+    overflow: auto;
+}
+.lagersystem-parcelpickup-search {
+    background-color: #e7e7e7;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    overflow: hidden;
+}
+.lagersystem-parcelpickup-title {
+    vertical-align: middle;
+    font-size: 1.1em;
+}
+input.lagersystem-parcelpickup-search-street,
+input.lagersystem-parcelpickup-search-zip,
+input.lagersystem-parcelpickup-search-city {
+    padding:3px 5px !important;
+    margin:0 !important;
+    border-radius: 0 !important;
+    border-top:1px solid #ccc !important;
+    border-left:1px solid #ccc !important;
+    border-right:1px solid #eee !important;
+    border-bottom:1px solid #eee !important;
+    font-size: 1em !important;
+    display: inline-block !important;
+}
+@media (max-width: 768px) {
+    input.lagersystem-parcelpickup-search-street {
+        width: 110px;
+    }
+}
+input.lagersystem-parcelpickup-search-zip {
+    width: 60px;
+}
+input.lagersystem-parcelpickup-search-city {
+    width: 90px;
+}
+.lagersystem-parcelpickup-search-button {
+    padding: 3px 10px;
+    margin:0;
+    background: #ccc;
+    border: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    color: #000;
+}
+.lagersystem-parcelpickup-searching,
+.lagersystem-parcelpickup-search-noresult {
+    padding: 20px;
+    text-align: center;
+}
+
+.lagersystem-parcelpickup-search-result .openinghours td {
+    padding: 0;
+    background-color: transparent !important;
+}
+.lagersystem-parcelpickup-search-result {
+    cursor: pointer;
+    overflow: hidden;
+    padding: 5px 10px;
+    border-bottom: 1px solid #ccc;
+}
+@media (max-width: 768px) {
+    .lagersystem-parcelpickup-search-result {
+        border-bottom: none;
+        padding: 5px 0;
+    }
+}
+.lagersystem-parcelpickup-search-result:hover {
+    background: #eee;
+}
+@media (max-width: 768px) {
+    .lagersystem-parcelpickup-search-result:hover {
+        background: none;
+    }
+}
+.lagersystem-parcelpickup-search-result .checkboxCtn .checkboxSpan {
+    display: block;
+    position: relative;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle;
+    font-size:2em;
+}
+.lagersystem-parcelpickup-search-result .checkboxCtn .checkboxSpan .fa-check-circle-o {
+    display: none;
+}
+.lagersystem-parcelpickup-search-result.active .checkboxCtn .checkboxSpan .fa-circle-o {
+    display: none;
+}
+.lagersystem-parcelpickup-search-result.active .checkboxCtn .checkboxSpan .fa-check-circle-o {
+    display: block;
+}
+.lagersystem-parcelpickup-search-result .information {
+    display: block;
+    flex-grow: 1;
+}
+
+.lagersystem-parcelpickup-search-result .infowrap {
+    display: flex;
+}
+
+.lagersystem-parcelpickup-search-result .checkboxCtn {
+    flex-grow: 0;
+}
+.lagersystem-parcelpickup-search-result .closebutton {
+    flex-grow: 0;
+    display: none;
+}
+@media only screen and (max-width: 992px) {
+    .lagersystem-parcelpickup-search-result.active .closebutton {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.lagersystem-parcelpickup-search-result .lagersystem-parcelpickup-close-button.mfp-close {
+    width: auto;
+    height: auto;
+    position: relative;
+    left: 0;
+    top: 0;
+    right: auto;
+    font-size: 1em;
+
+    padding: 5px;
+    background: #333333;
+    line-height: 1em;
+    opacity: 1;
+    color: #fff;
+    word-break: break-word;
+}
+
+.lagersystem-parcelpickup-search-result .openinghours {
+    font-size: 0.7em;
+}
+@media (max-width: 768px) {
+    .lagersystem-parcelpickup-search-result .openinghours {
+        display: none !important;
+    }
+}
+.lagersystem-parcelpickup-search-result .openinghours td:first-child {
+    padding-right: 10px;
+}
+.lagersystem-parcelpickup-search-result .information span {
+    display: block;
+    font-size:0.8em;
+}
+.lagersystem-parcelpickup-search-result .information span.title {
+    font-weight: bold;
+}
+.lagersystem-parcelpickup-search-result .information span.zip,
+.lagersystem-parcelpickup-search-result .information span.city {
+    display: inline-block;
+}
+.lagersystem-parcelpickup-search-result .information span.city {
+    margin-left: 5px;
+}
+
+.lagersystem-parcelpickup-wrap .message {
+    height: 30px;
+}
+
+.lagersystem-parcelpickup-results a {
+    display: block;
+    margin: 10px auto;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+}
+.lagersystem-parcelpickup-results a:hover {
+    text-decoration: underline;
+}
+
+.lagersystem-parcelpickup-inputFieldsContainer {
+    float:right;
+    vertical-align:middle;
+}
+
+.lagersystem-parcelpickup-errormsg {
+    display: none !important;
+}
+
+#mapErrorNotification,
+.mapErrorNotification {
+    position: absolute;
+    background: white;
+    width: 90%;
+    cursor: pointer;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 30%;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(0,0,0,0.3);
+    padding: 10px;
+    text-align: center;
+    height: auto;
+    font-size: 22px;
+}
+
+@media (max-width: 768px) {
+    #mapErrorNotification,
+    .mapErrorNotification {
+        position: static;
+        width: 100%;
+    }
+    .lagersystem-parcelpickup-map {
+        margin: 0 auto;
+    }
+    .lagersystem-parcelpickup-results {
+        width:100%;
+        height:auto;
+        position: relative;
+    }
+}
+
+
+
+
+
+
+/**
+ANIMATION
+**/
+
+.bubblingG {
+    display: inline-block;
+    text-align: center;
+    width:80px;
+    height:50px;
+}
+
+.bubblingG span {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 10px;
+    margin: 25px auto;
+    background: #000000;
+    -moz-border-radius: 50px;
+    -moz-animation: bubblingG 1.3s infinite alternate;
+    -webkit-border-radius: 50px;
+    -webkit-animation: bubblingG 1.3s infinite alternate;
+    -ms-border-radius: 50px;
+    -ms-animation: bubblingG 1.3s infinite alternate;
+    -o-border-radius: 50px;
+    -o-animation: bubblingG 1.3s infinite alternate;
+    border-radius: 50px;
+    animation: bubblingG 1.3s infinite alternate;
+}
+
+#bubblingG_1,
+.bubblingG_1 {
+    -moz-animation-delay: 0.78s;
+    -webkit-animation-delay: 0.78s;
+    -ms-animation-delay: 0.78s;
+    -o-animation-delay: 0.78s;
+    animation-delay: 0.78s;
+}
+
+#bubblingG_2,
+.bubblingG_2 {
+    -moz-animation-delay: 0.39s;
+    -webkit-animation-delay: 0.39s;
+    -ms-animation-delay: 0.39s;
+    -o-animation-delay: 0.39s;
+    animation-delay: 0.39s;
+}
+
+#bubblingG_3,
+.bubblingG_3 {
+    -moz-animation-delay: 0s;
+    -webkit-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+@-moz-keyframes bubblingG {
+    0% {
+        width: 10px;
+        height: 10px;
+        background-color:#000000;
+        -moz-transform: translateY(0);
+    }
+
+    100% {
+        width: 24px;
+        height: 24px;
+        background-color:#FFFFFF;
+        -moz-transform: translateY(-21px);
+    }
+
+}
+
+@-webkit-keyframes bubblingG {
+    0% {
+        width: 10px;
+        height: 10px;
+        background-color:#000000;
+        -webkit-transform: translateY(0);
+    }
+
+    100% {
+        width: 24px;
+        height: 24px;
+        background-color:#FFFFFF;
+        -webkit-transform: translateY(-21px);
+    }
+
+}
+
+@-ms-keyframes bubblingG {
+    0% {
+        width: 10px;
+        height: 10px;
+        background-color:#000000;
+        -ms-transform: translateY(0);
+    }
+
+    100% {
+        width: 24px;
+        height: 24px;
+        background-color:#FFFFFF;
+        -ms-transform: translateY(-21px);
+    }
+
+}
+
+@-o-keyframes bubblingG {
+    0% {
+        width: 10px;
+        height: 10px;
+        background-color:#000000;
+        -o-transform: translateY(0);
+    }
+
+    100% {
+        width: 24px;
+        height: 24px;
+        background-color:#FFFFFF;
+        -o-transform: translateY(-21px);
+    }
+
+}
+
+@keyframes bubblingG {
+    0% {
+        width: 10px;
+        height: 10px;
+        background-color:#000000;
+        transform: translateY(0);
+    }
+
+    100% {
+        width: 24px;
+        height: 24px;
+        background-color:#FFFFFF;
+        transform: translateY(-21px);
+    }
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .hide-on-tablet {
+        display: none !important;
+    }
+}
+@media only screen and (min-width: 993px) {
+    .hide-on-desktop {
+        display: none !important;
+    }
+}

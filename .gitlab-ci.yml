@@ -1,0 +1,10 @@
+stages: 
+  - release
+
+release_job:
+  stage: release
+  image: gitlab01.tigermedia.eu:5050/misc/docker-tool-images/svnbuild
+  only:
+    - tags
+  script:
+    - bash release.sh

@@ -1,0 +1,63 @@
+<div class="lagersystem-parcelpickup-div">
+    <div class="parcep-pickup-mobile-title hide-on-desktop hide-on-tablet">
+        <div class="basicHeading xl">Leveringssted</div>
+        Vælg venligst et afhentningssted
+    </div>
+    <div class="lagersystem-parcelpickup-search hide-on-mobile">
+        <div class="lagersystem-parcelpickup-errormsg">Map error</div>
+        <span class="lagersystem-parcelpickup-title">Vælg udleveringssted:</span>
+        <div class="lagersystem-parcelpickup-inputFieldsContainer">
+            <input type="text" class="lagersystem-parcelpickup-search-street" placeholder="Adresse"/>
+            <input type="text" class="lagersystem-parcelpickup-search-zip" placeholder="Postnr"/>
+            <input type="text" class="lagersystem-parcelpickup-search-city" placeholder="By"/>
+            <input type="hidden" class="lagersystem-parcelpickup-search-country"/>
+            <a href="#" class="lagersystem-parcelpickup-search-button">Søg</a>
+        </div>
+    </div>
+    <div class="lagersystem-parcelpickup-wrap">
+        <div class="lagersystem-parcelpickup-map hide-on-mobile">
+        </div>
+        <div class="lagersystem-parcelpickup-results"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    if(typeof isGoogleInitiated === "undefined"){
+        var isGoogleInitiated = false;
+    }
+    function lagersystemparcelpickupgmapinit(){
+        isGoogleInitiated = true;
+        loadParcelPickup();
+    }
+
+    if(typeof isLagersystemLoaded === "undefined"){
+        var isLagersystemLoaded = false;
+    }
+    jQuery(document).on("lagersystem-parcelpickup-loaded", function(){
+        isLagersystemLoaded = true;
+        loadParcelPickup();
+    });
+
+    if(isGoogleInitiated && isLagersystemLoaded){
+        loadParcelPickup(false);
+    }
+
+    function loadParcelPickup(cargoMethodAttachChangedEvent) {
+        cargoMethodAttachChangedEvent = typeof cargoMethodAttachChangedEvent === "undefined" ? true : cargoMethodAttachChangedEvent;
+        if(isGoogleInitiated && isLagersystemLoaded) {
+            jQuery(".lagersystem-parcelpickup-div").ParcelPickupLocator({
+                mapErrorNotificationCallback: function () {
+                    // $('html,body').animate({scrollTop: $("#basicOrderCollect").offset().top}, 600);
+                    alert("ERROR");
+                },
+                disableOtherDeliveryCallback: function (state, comesFromParcel) {
+                    if (state === true) {
+                        if (jQuery("#ship-to-different-address-checkbox").is(":checked")) {
+                            jQuery("#ship-to-different-address-checkbox").click();
+                        }
+                    }
+                },
+                cargoMethodAttachChangedEvent: cargoMethodAttachChangedEvent
+            });
+        }
+    }
+</script>

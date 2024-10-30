@@ -1,0 +1,30 @@
+version: "3.3"
+services:
+  webserver:
+   container_name: woocommerce
+   image: wordpress:php8.0
+   links:
+    - dbserver:mysql
+   ports:
+    - 80:80
+    - 8080:80
+   environment:
+    WORDPRESS_DB_PASSWORD: example
+    WORDPRESS_DB_USER: root
+    WORDPRESS_DB_NAME: wordpress
+    WORDPRESS_DEBUG: 1
+   volumes:
+    - ./:/var/www/html/wp-content/plugins/lagersystem-parcelpickup-woocommerce
+    - ./wordpress_plugins/:/var/www/html/wp-content/plugins/
+    - /var/www/html/wp-content/plugins/lagersystem-parcelpickup-woocommerce/wordpress_plugins
+
+  dbserver:
+   container_name: woo_mariadb
+   image: mariadb
+   ports:
+     - 3308:3306
+   environment:
+    MYSQL_ROOT_PASSWORD: example
+    MARIADB_DATABASE: wordpress
+   volumes:
+    - ./mariadb_data:/var/lib/mysql
